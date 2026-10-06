@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- List View -->
+    <record id="view_material_registration_tree" model="ir.ui.view">
+        <field name="name">material.registration.tree</field>
+        <field name="model">material.registration</field>
+        <field name="arch" type="xml">
+            <tree string="Materials">
+                <field name="material_code"/>
+                <field name="material_name"/>
+                <field name="material_type"/>
+                <field name="material_buy_price"/>
+                <field name="supplier_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Form View -->
+    <record id="view_material_registration_form" model="ir.ui.view">
+        <field name="name">material.registration.form</field>
+        <field name="model">material.registration</field>
+        <field name="arch" type="xml">
+            <form string="Material">
+                <sheet>
+                    <group>
+                        <field name="material_code"/>
+                        <field name="material_name"/>
+                        <field name="material_type"/>
+                        <field name="material_buy_price"/>
+                        <field name="supplier_id"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Window Action -->
+    <record id="action_material_registration" model="ir.actions.act_window">
+        <field name="name">Materials</field>
+        <field name="res_model">material.registration</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Root Menu -->
+    <menuitem
+        id="menu_material_registration_root"
+        name="Material Registration"
+        sequence="10"
+    />
+
+    <!-- Materials Menu -->
+    <menuitem
+        id="menu_material_registration"
+        name="Materials"
+        parent="menu_material_registration_root"
+        action="action_material_registration"
+        sequence="10"
+    />
+
+</odoo>
