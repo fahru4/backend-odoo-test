@@ -377,6 +377,12 @@ Field utama `material.registration`:
 
 ## Testing
 
+File unit test berada di:
+
+```text
+tests/test_material_model.py
+tests/test_material_controller.py
+
 Test dapat dijalankan dengan:
 
 ```bash
